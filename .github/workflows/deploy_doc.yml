@@ -23,6 +23,7 @@ jobs:
         with:
           token: ${{ secrets.PAT }}
       - name: config
+        run: |
           git config --global user.name 'githubaction'
           git config --global user.email 'alexlees@users.noreply.github.com'
       - uses: actions/setup-node@v2
