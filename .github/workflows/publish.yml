@@ -31,7 +31,7 @@ jobs:
       - name: version & publish
         run: |
             cat "${GITHUB_REF##refs/tags/}"
-            TAG_NAME="${GITHUB_REF##refs/tags/}"
+            export TAG_NAME="${GITHUB_REF##refs/tags/}"
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
             cat "${{TAG_NAME}}"
