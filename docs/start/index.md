@@ -20,7 +20,7 @@ yarn add @one-component/component
 > 自动 tree shark
 
 ```tsx | pure
-import { xxx } from '@one-component/component';
+import { xxx } from '@one-component/component'
 ```
 
 ## 定制主题

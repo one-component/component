@@ -17,7 +17,7 @@ $ docs:start
 发布文档
 
 ```bash
-$ npm run deploy
+$ npm run build
 ```
 
 发布组件

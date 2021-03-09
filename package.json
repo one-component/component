@@ -4,26 +4,24 @@
   "scripts": {
     "docs:start": "dumi dev",
     "docs:build": "NODE_ENV=production dumi build",
-    "docs:deploy": "npm run docs:build && gh-pages -d docs-dist",
     "build": "NODE_ENV=production father-build",
     "dev": "father-build --watch",
-    "deploy": "npm run docs:deploy",
     "release": "npm run build && npm publish",
     "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
     "test": "umi-test",
     "test:coverage": "umi-test --coverage",
-    "commit": "lint-staged && export HUSKY_SKIP_HOOKS=1 && git-cz"
+    "commit": "lint-staged && export HUSKY_SKIP_HOOKS=1 && git-cz",
+    "postversion": "git push"
   },
-  "main": "lib/index.js",
-  "module": "es/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
   "source": "src/index.ts",
   "sideEffects": [
     "*.less",
     "*.css"
   ],
   "files": [
-    "lib",
-    "es",
+    "dist",
     "src"
   ],
   "gitHooks": {
@@ -60,11 +58,13 @@
     "@one-style/commit": "^0.1.1",
     "@one-style/eslint": "^0.1.1",
     "@one-style/prettier": "^0.1.1",
+    "@types/jest": "^26.0.20",
+    "@types/react-test-renderer": "^17.0.1",
     "@umijs/test": "^3.0.5",
     "dumi": "^1.1.7",
     "dumi-theme-mobile": "^1.0.7",
     "father-build": "^1.19.2",
-    "gh-pages": "^3.1.0",
-    "react": "^17.0.1"
+    "react": "^17.0.1",
+    "react-test-renderer": "^17.0.1"
   }
 }

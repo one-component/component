@@ -1,4 +1,4 @@
-import { defineConfig } from 'dumi';
+import { defineConfig } from 'dumi'
 
 export default defineConfig({
   title: '@one-component',
@@ -18,4 +18,4 @@ export default defineConfig({
     },
   ],
   // more config: https://d.umijs.org/config
-});
+})
