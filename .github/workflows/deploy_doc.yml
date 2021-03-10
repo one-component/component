@@ -3,11 +3,9 @@
 name: deploy doc
 
 on:
-  release:
-    branches:
-      - main
-    types: # This configuration does not affect the page_build event above
-      - created
+  push:
+    tags:
+    - '*'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
