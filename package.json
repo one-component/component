@@ -6,12 +6,13 @@
     "docs:build": "NODE_ENV=production dumi build",
     "build": "NODE_ENV=production father-build",
     "dev": "father-build --watch",
-    "release": "npm run build && npm publish",
+    "release": "npm version patch -m 'chore(release): release %s'",
     "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
     "test": "umi-test",
     "test:coverage": "umi-test --coverage",
     "commit": "lint-staged && export HUSKY_SKIP_HOOKS=1 && git-cz",
-    "postversion": "git push"
+    "changelog": "conventional-changelog -p angular -i ./docs/change-log/index.md -s -r 0 && conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add .",
+    "version": "npm run changelog"
   },
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -55,9 +56,9 @@
     "react": "^17.0.1"
   },
   "devDependencies": {
-    "@one-style/commit": "^0.1.1",
-    "@one-style/eslint": "^0.1.1",
-    "@one-style/prettier": "^0.1.1",
+    "@one-style/commit": "^0.2.0",
+    "@one-style/eslint": "^0.2.0",
+    "@one-style/prettier": "^0.2.0",
     "@types/jest": "^26.0.20",
     "@types/react-test-renderer": "^17.0.1",
     "@umijs/test": "^3.0.5",
